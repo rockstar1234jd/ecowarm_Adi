@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoWarm - Sustainable Living, Naturally</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <!-- Cursor Glow Effect -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="leaf-spinner"></div>
+            <p>EcoWarm</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">🌿</span>
+                <span class="logo-text">EcoWarm</span>
+            </a>
+            <nav class="nav-links" id="navLinks">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#products" class="nav-link">Products</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#testimonials" class="nav-link">Reviews</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+                    <i class="fas fa-sun sun-icon"></i>
+                    <i class="fas fa-moon moon-icon"></i>
+                    <span class="toggle-slider"></span>
+                </button>
+                <button class="cart-btn" id="cartBtn">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-particles" id="heroParticles"></div>
+        <div class="hero-bg-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge animate-on-scroll">
+                <span class="badge-dot"></span>
+                Sustainable & Eco-Friendly
+            </div>
+            <h1 class="hero-title animate-on-scroll">
+                <span class="title-line">Live Naturally,</span>
+                <span class="title-line highlight">Live Warmly</span>
+            </h1>
+            <p class="hero-subtitle animate-on-scroll">
+                Discover our curated collection of eco-friendly products that bring warmth to your home while caring for the planet. Every purchase plants a tree.
+            </p>
+            <div class="hero-cta animate-on-scroll">
+                <a href="#products" class="btn btn-primary">
+                    <span>Shop Collection</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#about" class="btn btn-outline">
+                    <span>Our Story</span>
+                </a>
+            </div>
+            <div class="hero-stats animate-on-scroll">
+                <div class="stat-item">
+                    <span class="stat-number" data-count="50000">0</span>
+                    <span class="stat-label">Trees Planted</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="12000">0</span>
+                    <span class="stat-label">Happy Customers</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="100">0</span>
+                    <span class="stat-label">% Sustainable</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <div class="scroll-line"></div>
+            <span>Scroll to explore</span>
+        </div>
+    </section>
+
+
+    <!-- Marquee Section -->
+    <section class="marquee-section">
+        <div class="marquee-track">
+            <div class="marquee-content">
+                <span>🌱 Eco-Friendly</span>
+                <span>♻️ Sustainable</span>
+                <span>🌍 Carbon Neutral</span>
+                <span>🌿 Organic Materials</span>
+                <span>💚 Cruelty Free</span>
+                <span>🌱 Eco-Friendly</span>
+                <span>♻️ Sustainable</span>
+                <span>🌍 Carbon Neutral</span>
+                <span>🌿 Organic Materials</span>
+                <span>💚 Cruelty Free</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section" id="products">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">Our Collection</span>
+                <h2 class="section-title">Sustainable Essentials</h2>
+                <p class="section-subtitle">Handpicked eco-friendly products for conscious living</p>
+            </div>
+
+            <div class="product-filters animate-on-scroll">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="home">Home</button>
+                <button class="filter-btn" data-filter="personal">Personal Care</button>
+                <button class="filter-btn" data-filter="kitchen">Kitchen</button>
+                <button class="filter-btn" data-filter="lifestyle">Lifestyle</button>
+            </div>
+
+            <div class="products-grid">
+                <div class="product-card animate-on-scroll" data-category="home">
+                    <div class="product-image">
+                        <div class="product-img-placeholder" style="background: linear-gradient(135deg, #a8e6cf, #88d8a8);">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="product-overlay">
+                            <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                            <button class="wishlist-btn"><i class="fas fa-heart"></i></button>
+                        </div>
+                        <span class="product-badge">Bestseller</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Bamboo Throw Blanket</h3>
+                        <p class="product-desc">Ultra-soft organic bamboo fiber blanket, naturally hypoallergenic</p>
+                        <div class="product-footer">
+                            <span class="product-price">$49.99</span>
+                            <button class="add-to-cart-btn" data-product="bamboo-blanket" data-price="49.99">
+                                <i class="fas fa-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="product-card animate-on-scroll" data-category="personal">
+                    <div class="product-image">
+                        <div class="product-img-placeholder" style="background: linear-gradient(135deg, #ffd3b6, #ffaaa5);">
+                            <i class="fas fa-spa"></i>
+                        </div>
+                        <div class="product-overlay">
+                            <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                            <button class="wishlist-btn"><i class="fas fa-heart"></i></button>
+                        </div>
+                        <span class="product-badge new">New</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Organic Skincare Set</h3>
+                        <p class="product-desc">100% natural ingredients, zero chemicals, plastic-free packaging</p>
+                        <div class="product-footer">
+                            <span class="product-price">$34.99</span>
+                            <button class="add-to-cart-btn" data-product="skincare-set" data-price="34.99">
+                                <i class="fas fa-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card animate-on-scroll" data-category="kitchen">
+                    <div class="product-image">
+                        <div class="product-img-placeholder" style="background: linear-gradient(135deg, #c3bef0, #a29bfe);">
+                            <i class="fas fa-mug-hot"></i>
+                        </div>
+                        <div class="product-overlay">
+                            <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                            <button class="wishlist-btn"><i class="fas fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Reusable Coffee Cup</h3>
+                        <p class="product-desc">Handcrafted ceramic cup with cork sleeve, dishwasher safe</p>
+                        <div class="product-footer">
+                            <span class="product-price">$24.99</span>
+                            <button class="add-to-cart-btn" data-product="coffee-cup" data-price="24.99">
+                                <i class="fas fa-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card animate-on-scroll" data-category="lifestyle">
+                    <div class="product-image">
+                        <div class="product-img-placeholder" style="background: linear-gradient(135deg, #ffeaa7, #fdcb6e);">
+                            <i class="fas fa-bag-shopping"></i>
+                        </div>
+                        <div class="product-overlay">
+                            <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                            <button class="wishlist-btn"><i class="fas fa-heart"></i></button>
+                        </div>
+                        <span class="product-badge sale">-20%</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Hemp Canvas Tote</h3>
+                        <p class="product-desc">Durable hemp tote bag, perfect for everyday sustainable shopping</p>
+                        <div class="product-footer">
+                            <span class="product-price">$19.99</span>
+                            <button class="add-to-cart-btn" data-product="hemp-tote" data-price="19.99">
+                                <i class="fas fa-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="product-card animate-on-scroll" data-category="home">
+                    <div class="product-image">
+                        <div class="product-img-placeholder" style="background: linear-gradient(135deg, #81ecec, #00cec9);">
+                            <i class="fas fa-couch"></i>
+                        </div>
+                        <div class="product-overlay">
+                            <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                            <button class="wishlist-btn"><i class="fas fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Recycled Cotton Cushion</h3>
+                        <p class="product-desc">Made from 100% recycled cotton, naturally dyed with plant pigments</p>
+                        <div class="product-footer">
+                            <span class="product-price">$29.99</span>
+                            <button class="add-to-cart-btn" data-product="cotton-cushion" data-price="29.99">
+                                <i class="fas fa-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card animate-on-scroll" data-category="personal">
+                    <div class="product-image">
+                        <div class="product-img-placeholder" style="background: linear-gradient(135deg, #fab1a0, #e17055);">
+                            <i class="fas fa-pump-soap"></i>
+                        </div>
+                        <div class="product-overlay">
+                            <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                            <button class="wishlist-btn"><i class="fas fa-heart"></i></button>
+                        </div>
+                        <span class="product-badge">Popular</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Natural Shampoo Bar</h3>
+                        <p class="product-desc">Zero-waste solid shampoo with essential oils, lasts 80+ washes</p>
+                        <div class="product-footer">
+                            <span class="product-price">$14.99</span>
+                            <button class="add-to-cart-btn" data-product="shampoo-bar" data-price="14.99">
+                                <i class="fas fa-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card animate-on-scroll" data-category="kitchen">
+                    <div class="product-image">
+                        <div class="product-img-placeholder" style="background: linear-gradient(135deg, #55efc4, #00b894);">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <div class="product-overlay">
+                            <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                            <button class="wishlist-btn"><i class="fas fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Bamboo Cutlery Set</h3>
+                        <p class="product-desc">Portable bamboo cutlery with carry case, replace single-use plastic</p>
+                        <div class="product-footer">
+                            <span class="product-price">$16.99</span>
+                            <button class="add-to-cart-btn" data-product="bamboo-cutlery" data-price="16.99">
+                                <i class="fas fa-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card animate-on-scroll" data-category="lifestyle">
+                    <div class="product-image">
+                        <div class="product-img-placeholder" style="background: linear-gradient(135deg, #dfe6e9, #b2bec3);">
+                            <i class="fas fa-bottle-water"></i>
+                        </div>
+                        <div class="product-overlay">
+                            <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                            <button class="wishlist-btn"><i class="fas fa-heart"></i></button>
+                        </div>
+                        <span class="product-badge new">New</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Stainless Steel Bottle</h3>
+                        <p class="product-desc">Double-wall insulated, keeps drinks cold 24h or hot 12h</p>
+                        <div class="product-footer">
+                            <span class="product-price">$32.99</span>
+                            <button class="add-to-cart-btn" data-product="steel-bottle" data-price="32.99">
+                                <i class="fas fa-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-visual animate-on-scroll">
+                    <div class="about-image-stack">
+                        <div class="about-img-1">
+                            <div class="img-placeholder" style="background: linear-gradient(135deg, #a8e6cf, #3dc1a6);">
+                                <i class="fas fa-seedling"></i>
+                            </div>
+                        </div>
+                        <div class="about-img-2">
+                            <div class="img-placeholder" style="background: linear-gradient(135deg, #ffeaa7, #fdcb6e);">
+                                <i class="fas fa-hand-holding-heart"></i>
+                            </div>
+                        </div>
+                        <div class="floating-card">
+                            <span class="fc-number">15+</span>
+                            <span class="fc-text">Years of Sustainability</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-content animate-on-scroll">
+                    <span class="section-tag">Our Story</span>
+                    <h2 class="section-title">Warming the World,<br>Naturally</h2>
+                    <p class="about-text">
+                        EcoWarm was born from a simple belief: comfort and sustainability can coexist beautifully. We source only the finest organic, recycled, and renewable materials to craft products that warm your home without harming our planet.
+                    </p>
+                    <p class="about-text">
+                        Every product in our collection tells a story of ethical craftsmanship, fair trade partnerships, and environmental stewardship. When you choose EcoWarm, you choose a greener future.
+                    </p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <div class="af-icon"><i class="fas fa-recycle"></i></div>
+                            <div class="af-text">
+                                <h4>Zero Waste</h4>
+                                <p>Plastic-free packaging & shipping</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="af-icon"><i class="fas fa-globe-americas"></i></div>
+                            <div class="af-text">
+                                <h4>Carbon Neutral</h4>
+                                <p>Offset all our emissions since 2020</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="af-icon"><i class="fas fa-handshake"></i></div>
+                            <div class="af-text">
+                                <h4>Fair Trade</h4>
+                                <p>Ethical sourcing from local artisans</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">Why EcoWarm</span>
+                <h2 class="section-title">Built Different, Built Better</h2>
+                <p class="section-subtitle">Our commitment to sustainability goes beyond products</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <h3>One Tree Per Order</h3>
+                    <p>Every purchase contributes to reforestation. We've planted over 50,000 trees worldwide.</p>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Green Shipping</h3>
+                    <p>Carbon-neutral delivery with biodegradable packaging materials on every shipment.</p>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Certified Organic</h3>
+                    <p>All products meet or exceed GOTS and OEKO-TEX certification standards.</p>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-infinity"></i>
+                    </div>
+                    <h3>Lifetime Warranty</h3>
+                    <p>Built to last. We stand behind every product with our lifetime repair guarantee.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section" id="testimonials">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">Testimonials</span>
+                <h2 class="section-title">Loved by Thousands</h2>
+                <p class="section-subtitle">See what our community says about EcoWarm</p>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"The bamboo blanket is incredibly soft! I love knowing my purchase helps plant trees. EcoWarm has changed how I think about shopping."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" style="background: linear-gradient(135deg, #a8e6cf, #88d8a8);">S</div>
+                        <div class="author-info">
+                            <h4>Sarah Mitchell</h4>
+                            <span>Verified Buyer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Finally, a brand that truly walks the talk on sustainability. The quality is premium and the packaging is 100% compostable. Highly recommend!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" style="background: linear-gradient(135deg, #ffd3b6, #ffaaa5);">J</div>
+                        <div class="author-info">
+                            <h4>James Rodriguez</h4>
+                            <span>Verified Buyer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="testimonial-text">"I've replaced all my kitchen essentials with EcoWarm products. The bamboo cutlery set is a game-changer for reducing my daily plastic waste."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" style="background: linear-gradient(135deg, #c3bef0, #a29bfe);">E</div>
+                        <div class="author-info">
+                            <h4>Emma Chen</h4>
+                            <span>Verified Buyer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content animate-on-scroll">
+                <h2>Join the Green Movement</h2>
+                <p>Subscribe for exclusive offers, sustainability tips, and early access to new products.</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-primary">
+                        <span>Subscribe</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">Get in Touch</span>
+                <h2 class="section-title">Let's Connect</h2>
+                <p class="section-subtitle">Have questions? We'd love to hear from you.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info animate-on-scroll">
+                    <div class="contact-item">
+                        <div class="ci-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="ci-text">
+                            <h4>Email Us</h4>
+                            <p>hello@ecowarm.co</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="ci-icon"><i class="fas fa-phone"></i></div>
+                        <div class="ci-text">
+                            <h4>Call Us</h4>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="ci-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="ci-text">
+                            <h4>Visit Us</h4>
+                            <p>123 Green Street, Eco City, EC 45678</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <form class="contact-form animate-on-scroll" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Subject">
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <span>Send Message</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <span class="logo-icon">🌿</span>
+                        <span class="logo-text">EcoWarm</span>
+                    </a>
+                    <p>Sustainable living made beautiful. Every product, every choice, every day — for a warmer, greener world.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Shop</h4>
+                    <a href="#">Home Essentials</a>
+                    <a href="#">Personal Care</a>
+                    <a href="#">Kitchen</a>
+                    <a href="#">Lifestyle</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <a href="#">About Us</a>
+                    <a href="#">Sustainability</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Press</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <a href="#">FAQ</a>
+                    <a href="#">Shipping</a>
+                    <a href="#">Returns</a>
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 EcoWarm. All rights reserved.</p>
+                <p class="creator-credit">Created with 💚 by <strong>Aditya Kumar Sah</strong></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-bag"></i> Your Cart</h3>
+            <button class="cart-close" id="cartClose"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="cart-empty">
+                <i class="fas fa-leaf"></i>
+                <p>Your cart is empty</p>
+                <span>Start shopping sustainably!</span>
+            </div>
+        </div>
+        <div class="cart-footer" id="cartFooter" style="display:none;">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="total-amount">$0.00</span>
+            </div>
+            <button class="btn btn-primary btn-full">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/animations.js"></script>
+</body>
+</html>

@@ -1,0 +1,317 @@
+/* ============================================
+   EcoWarm - Premium Animations
+   Smooth Stream-Flow Motion
+   Created by: Aditya Kumar Sah
+   ============================================ */
+
+/* Scroll Reveal Animations */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s var(--transition-smooth),
+                transform 0.8s var(--transition-smooth);
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.animate-on-scroll:nth-child(2) { transition-delay: 0.1s; }
+.animate-on-scroll:nth-child(3) { transition-delay: 0.2s; }
+.animate-on-scroll:nth-child(4) { transition-delay: 0.3s; }
+.animate-on-scroll:nth-child(5) { transition-delay: 0.4s; }
+.animate-on-scroll:nth-child(6) { transition-delay: 0.5s; }
+.animate-on-scroll:nth-child(7) { transition-delay: 0.6s; }
+.animate-on-scroll:nth-child(8) { transition-delay: 0.7s; }
+
+/* Stagger effect for grid items */
+.products-grid .animate-on-scroll:nth-child(1) { transition-delay: 0.05s; }
+.products-grid .animate-on-scroll:nth-child(2) { transition-delay: 0.1s; }
+.products-grid .animate-on-scroll:nth-child(3) { transition-delay: 0.15s; }
+.products-grid .animate-on-scroll:nth-child(4) { transition-delay: 0.2s; }
+.products-grid .animate-on-scroll:nth-child(5) { transition-delay: 0.25s; }
+.products-grid .animate-on-scroll:nth-child(6) { transition-delay: 0.3s; }
+.products-grid .animate-on-scroll:nth-child(7) { transition-delay: 0.35s; }
+.products-grid .animate-on-scroll:nth-child(8) { transition-delay: 0.4s; }
+
+/* Fade In Up */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Fade In Down */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scale In */
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Slide In Left */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Slide In Right */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Floating Particles */
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: particleFloat linear infinite;
+}
+
+@keyframes particleFloat {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--tx), var(--ty)) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Leaf Float Animation */
+.leaf-particle {
+    position: absolute;
+    font-size: 1rem;
+    pointer-events: none;
+    animation: leafFloat linear infinite;
+    opacity: 0;
+}
+
+@keyframes leafFloat {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 0;
+    }
+    15% {
+        opacity: 0.6;
+    }
+    85% {
+        opacity: 0.6;
+    }
+    100% {
+        transform: translate(var(--leaf-x), var(--leaf-y)) rotate(var(--leaf-rot));
+        opacity: 0;
+    }
+}
+
+/* Glow Pulse */
+@keyframes glowPulse {
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(45, 138, 78, 0.2),
+                    0 0 10px rgba(45, 138, 78, 0.1);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(45, 138, 78, 0.4),
+                    0 0 40px rgba(45, 138, 78, 0.2);
+    }
+}
+
+/* Ripple Effect */
+@keyframes ripple {
+    0% {
+        transform: scale(0);
+        opacity: 0.6;
+    }
+    100% {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+.ripple-effect {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(45, 138, 78, 0.3);
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+    animation: ripple 0.8s ease-out forwards;
+}
+
+/* Smooth Page Transitions */
+.page-transition {
+    animation: fadeInUp 0.6s var(--transition-smooth) forwards;
+}
+
+/* Counter Animation */
+.counting {
+    display: inline-block;
+    animation: countBounce 0.3s var(--transition-bounce);
+}
+
+@keyframes countBounce {
+    50% { transform: scale(1.1); }
+}
+
+/* Card Tilt Effect */
+.tilt-card {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.tilt-card .tilt-inner {
+    transition: transform 0.1s ease;
+    transform-style: preserve-3d;
+}
+
+/* Magnetic Button Effect */
+.magnetic-btn {
+    transition: transform 0.3s var(--transition-smooth);
+}
+
+/* Stream Flow Effect - Gradient border animation */
+@keyframes streamFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.stream-border {
+    background-size: 200% 200%;
+    animation: streamFlow 3s ease infinite;
+}
+
+/* Theme Transition */
+.theme-transitioning * {
+    transition: background-color 0.6s var(--transition-smooth),
+                color 0.6s var(--transition-smooth),
+                border-color 0.6s var(--transition-smooth),
+                box-shadow 0.6s var(--transition-smooth) !important;
+}
+
+/* Smooth Reveal for filter */
+.product-card.hidden {
+    opacity: 0;
+    transform: scale(0.8);
+    pointer-events: none;
+    position: absolute;
+}
+
+.product-card.show {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: all;
+    position: relative;
+    animation: scaleIn 0.4s var(--transition-smooth) forwards;
+}
+
+/* Notification Toast */
+@keyframes slideInToast {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutToast {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+.toast-notification {
+    position: fixed;
+    top: 100px;
+    right: 24px;
+    padding: 16px 24px;
+    border-radius: 12px;
+    background: var(--bg-card);
+    border: 1px solid var(--accent-primary);
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 3000;
+    animation: slideInToast 0.4s var(--transition-smooth) forwards;
+    color: var(--text-primary);
+}
+
+.toast-notification.removing {
+    animation: slideOutToast 0.4s var(--transition-smooth) forwards;
+}
+
+.toast-notification i {
+    color: var(--accent-primary);
+    font-size: 1.2rem;
+}
+
+/* Smooth Parallax */
+.parallax-layer {
+    transition: transform 0.1s linear;
+    will-change: transform;
+}
+
+/* Loading Skeleton */
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+.skeleton {
+    background: linear-gradient(90deg, var(--bg-secondary) 25%, var(--bg-card) 50%, var(--bg-secondary) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 8px;
+}
