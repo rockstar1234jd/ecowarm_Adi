@@ -1,0 +1,196 @@
+/* ==========================================
+   EcoWarm Admin — Core Stylesheet
+   Created by: Aditya Kumar Sah
+   ========================================== */
+
+:root, [data-theme="light"] {
+    --brand-primary: #2d5016;
+    --brand-primary-light: #5a8d3e;
+    --brand-accent: #d4a574;
+    --bg-base: #f5f3ed;
+    --bg-soft: #ffffff;
+    --bg-card: #ffffff;
+    --bg-sidebar: #1a2e0f;
+    --bg-glass: rgba(255,255,255,.7);
+    --bg-hover: rgba(45,80,22,.05);
+    --text-primary: #1a2e0f;
+    --text-secondary: #4a5d3a;
+    --text-muted: #7a8870;
+    --text-sidebar: #e8f0e0;
+    --text-sidebar-muted: #a8b89a;
+    --border: rgba(45,80,22,.12);
+    --border-soft: rgba(45,80,22,.06);
+    --shadow-sm: 0 2px 8px rgba(45,80,22,.05);
+    --shadow-md: 0 8px 24px rgba(45,80,22,.08);
+    --shadow-lg: 0 20px 48px rgba(45,80,22,.12);
+    --gradient-brand: linear-gradient(135deg, #2d5016 0%, #5a8d3e 50%, #d4a574 100%);
+    --gradient-soft: linear-gradient(135deg, rgba(90,141,62,.1), rgba(212,165,116,.1));
+    --success: #16a34a;
+    --warning: #f59e0b;
+    --danger: #dc2626;
+    --info: #2563eb;
+    --transition: cubic-bezier(.4,0,.2,1);
+    --bounce: cubic-bezier(.68,-.55,.265,1.55);
+}
+
+[data-theme="dark"] {
+    --brand-primary: #7cb342;
+    --brand-primary-light: #aed581;
+    --brand-accent: #ffb74d;
+    --bg-base: #0a0f08;
+    --bg-soft: #131a10;
+    --bg-card: #1a2412;
+    --bg-sidebar: #060a05;
+    --bg-glass: rgba(20,30,16,.7);
+    --bg-hover: rgba(124,179,66,.08);
+    --text-primary: #e8f0e0;
+    --text-secondary: #b8c8a8;
+    --text-muted: #7a8a70;
+    --border: rgba(124,179,66,.15);
+    --border-soft: rgba(124,179,66,.06);
+    --shadow-sm: 0 2px 8px rgba(0,0,0,.3);
+    --shadow-md: 0 8px 24px rgba(0,0,0,.4);
+    --shadow-lg: 0 20px 48px rgba(0,0,0,.5);
+    --gradient-brand: linear-gradient(135deg, #7cb342, #aed581 50%, #ffb74d);
+}
+
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { -webkit-font-smoothing: antialiased; }
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background: var(--bg-base);
+    color: var(--text-primary);
+    line-height: 1.6;
+    transition: background-color .6s ease, color .6s ease;
+}
+
+a { text-decoration: none; color: inherit; }
+button {
+    cursor: pointer; border: none; outline: none;
+    font-family: inherit; background: transparent; color: inherit;
+}
+img { max-width: 100%; display: block; }
+
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    line-height: 1.2;
+}
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-base); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--brand-primary); }
+::selection { background: var(--brand-primary-light); color: white; }
+
+/* ===== Buttons ===== */
+.btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 20px; border-radius: 12px;
+    font-size: .85rem; font-weight: 600;
+    transition: all .3s var(--transition);
+    white-space: nowrap;
+}
+.btn-primary {
+    background: var(--gradient-brand); color: white;
+    box-shadow: 0 4px 14px rgba(45,80,22,.25);
+}
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(45,80,22,.35);
+}
+.btn-outline {
+    background: transparent; color: var(--text-primary);
+    border: 1.5px solid var(--border);
+}
+.btn-outline:hover {
+    border-color: var(--brand-primary); color: var(--brand-primary);
+}
+.btn-danger {
+    background: var(--danger); color: white;
+}
+.btn-danger:hover { background: #b91c1c; }
+
+/* ===== Theme Toggle ===== */
+.theme-toggle {
+    position: relative;
+    width: 56px; height: 28px;
+    border-radius: 28px;
+    background: var(--bg-base);
+    border: 1.5px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 6px;
+    transition: all .4s ease;
+}
+.theme-toggle:hover {
+    box-shadow: 0 0 20px rgba(90,141,62,.3);
+}
+.theme-toggle .sun-icon, .theme-toggle .moon-icon {
+    font-size: .65rem; color: var(--text-muted); z-index: 1;
+}
+.toggle-thumb {
+    position: absolute; top: 2px; left: 2px;
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    background: var(--gradient-brand);
+    transition: transform .4s var(--bounce);
+    box-shadow: 0 2px 8px rgba(45,80,22,.4);
+}
+[data-theme="dark"] .toggle-thumb { transform: translateX(28px); }
+
+/* ===== Toast ===== */
+.toast-container {
+    position: fixed; top: 80px; right: 24px;
+    z-index: 10001;
+    display: flex; flex-direction: column; gap: 12px;
+    pointer-events: none;
+}
+.toast {
+    background: var(--bg-card);
+    padding: 14px 20px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    border-left: 4px solid var(--brand-primary);
+    display: flex; align-items: center; gap: 12px;
+    min-width: 280px;
+    animation: toastIn .4s var(--bounce);
+    pointer-events: auto;
+}
+.toast.error { border-left-color: var(--danger); }
+.toast.error i { color: var(--danger); }
+.toast i { color: var(--brand-primary); font-size: 1.1rem; }
+.toast span { font-size: .88rem; font-weight: 600; }
+.toast.removing { animation: toastOut .4s ease forwards; }
+@keyframes toastIn {
+    from { transform: translateX(120%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+@keyframes toastOut {
+    to { transform: translateX(120%); opacity: 0; }
+}
+
+/* ===== Animations ===== */
+.animate-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp .6s var(--transition) forwards;
+}
+.animate-in:nth-child(1) { animation-delay: .05s; }
+.animate-in:nth-child(2) { animation-delay: .12s; }
+.animate-in:nth-child(3) { animation-delay: .19s; }
+.animate-in:nth-child(4) { animation-delay: .26s; }
+.animate-in:nth-child(5) { animation-delay: .33s; }
+.animate-in:nth-child(6) { animation-delay: .40s; }
+@keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes scaleIn {
+    from { opacity: 0; transform: scale(.95); }
+    to { opacity: 1; transform: scale(1); }
+}
