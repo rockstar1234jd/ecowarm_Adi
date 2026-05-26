@@ -3,52 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EcoWarm - Sustainable Living, Naturally</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/animations.css">
+    <title>EcoWarm | Premium Exotic Pets & Care</title>
+    <meta name="description" content="Discover rare exotic pets, premium habitats and expert care guidance. Responsibly sourced, passionately cared for.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800;900&family=Quicksand:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
 </head>
-<body>
-    <!-- Cursor Glow Effect -->
+<body class="bg-nature-pattern">
+    <!-- Cursor Glow -->
     <div class="cursor-glow" id="cursorGlow"></div>
+    <div class="cursor-dot" id="cursorDot"></div>
 
     <!-- Preloader -->
     <div class="preloader" id="preloader">
-        <div class="preloader-inner">
-            <div class="leaf-spinner"></div>
-            <p>EcoWarm</p>
+        <div class="pre-inner">
+            <div class="pre-leaf">🌿</div>
+            <div class="pre-bar"><div class="pre-bar-fill"></div></div>
+            <p>Initializing the Nook<span class="dots"></span></p>
         </div>
     </div>
+
+    <!-- Floating Orbs Background -->
+    <div class="orbs-bg">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
 
     <!-- Navigation -->
     <header class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#" class="logo">
-                <span class="logo-icon">🌿</span>
-                <span class="logo-text">EcoWarm</span>
+                <span class="logo-mark">
+                    <i class="fas fa-leaf"></i>
+                </span>
+                <div class="logo-text-wrap">
+                    <span class="logo-title">EcoWarm</span>
+                    <span class="logo-sub">Premium Exotics</span>
+                </div>
             </a>
+
             <nav class="nav-links" id="navLinks">
-                <a href="#home" class="nav-link active">Home</a>
-                <a href="#products" class="nav-link">Products</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#features" class="nav-link">Features</a>
-                <a href="#testimonials" class="nav-link">Reviews</a>
-                <a href="#contact" class="nav-link">Contact</a>
+                <a href="#home" class="nav-link active"><span>Home</span></a>
+                <a href="#products" class="nav-link"><span>Companions</span></a>
+                <a href="#about" class="nav-link"><span>About</span></a>
+                <a href="#guides" class="nav-link"><span>Care Guides</span></a>
+                <a href="#contact" class="nav-link"><span>Contact</span></a>
             </nav>
+
             <div class="nav-actions">
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
                     <i class="fas fa-sun sun-icon"></i>
                     <i class="fas fa-moon moon-icon"></i>
-                    <span class="toggle-slider"></span>
+                    <span class="toggle-thumb"></span>
                 </button>
-                <button class="cart-btn" id="cartBtn">
+                <button class="icon-btn" aria-label="Search">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="cart-btn" id="cartBtn" aria-label="Cart">
                     <i class="fas fa-shopping-bag"></i>
                     <span class="cart-count">0</span>
                 </button>
-                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
                     <span></span><span></span><span></span>
                 </button>
             </div>
@@ -59,437 +82,665 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-particles" id="heroParticles"></div>
-        <div class="hero-bg-overlay"></div>
-        <div class="hero-content">
-            <div class="hero-badge animate-on-scroll">
-                <span class="badge-dot"></span>
-                Sustainable & Eco-Friendly
-            </div>
-            <h1 class="hero-title animate-on-scroll">
-                <span class="title-line">Live Naturally,</span>
-                <span class="title-line highlight">Live Warmly</span>
-            </h1>
-            <p class="hero-subtitle animate-on-scroll">
-                Discover our curated collection of eco-friendly products that bring warmth to your home while caring for the planet. Every purchase plants a tree.
-            </p>
-            <div class="hero-cta animate-on-scroll">
-                <a href="#products" class="btn btn-primary">
-                    <span>Shop Collection</span>
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-                <a href="#about" class="btn btn-outline">
-                    <span>Our Story</span>
-                </a>
-            </div>
-            <div class="hero-stats animate-on-scroll">
-                <div class="stat-item">
-                    <span class="stat-number" data-count="50000">0</span>
-                    <span class="stat-label">Trees Planted</span>
+        <div class="hero-grid">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-leaf"></i>
+                    <span>Premium Exotics & Supplies</span>
                 </div>
-                <div class="stat-item">
-                    <span class="stat-number" data-count="12000">0</span>
-                    <span class="stat-label">Happy Customers</span>
+                <h1 class="hero-title">
+                    <span class="title-line reveal-line">Bring the</span>
+                    <span class="title-line reveal-line title-gradient">
+                        <span class="word-cycle" id="wordCycle">Wild</span>
+                    </span>
+                    <span class="title-line reveal-line">Into Your Home</span>
+                </h1>
+                <p class="hero-subtitle reveal-line">
+                    Discover our curated selection of premium exotic pets, specialized habitats, and expert care guidance. Responsibly sourced, passionately cared for.
+                </p>
+                <div class="hero-cta reveal-line">
+                    <a href="#products" class="btn btn-primary">
+                        <span>Shop Now</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#guides" class="btn btn-ghost">
+                        <i class="fas fa-book-open"></i>
+                        <span>Read Care Guides</span>
+                    </a>
                 </div>
-                <div class="stat-item">
-                    <span class="stat-number" data-count="100">0</span>
-                    <span class="stat-label">% Sustainable</span>
+            </div>
+
+            <div class="hero-visual reveal-fade">
+                <div class="hero-card-stack">
+                    <div class="hero-img-main">
+                        <div class="hero-img-bg" style="background: linear-gradient(135deg, #2d5016, #5a8d3e);">
+                            <div class="hero-img-overlay">
+                                <div class="floating-emoji" style="--delay:0s">🕷️</div>
+                                <div class="floating-emoji" style="--delay:1s">🦂</div>
+                                <div class="floating-emoji" style="--delay:2s">🐢</div>
+                                <div class="floating-emoji" style="--delay:0.5s">🦎</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-floating-card hf-1">
+                        <div class="hf-icon" style="background:linear-gradient(135deg,#a8e6cf,#3dc1a6)">
+                            <i class="fas fa-shield-heart"></i>
+                        </div>
+                        <div>
+                            <h4>Health Guarantee</h4>
+                            <p>14-day warranty</p>
+                        </div>
+                    </div>
+                    <div class="hero-floating-card hf-2">
+                        <div class="hf-icon" style="background:linear-gradient(135deg,#ffd3b6,#ff9a76)">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div>
+                            <h4>4.9/5 Rating</h4>
+                            <p>12,000+ reviews</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="hero-scroll-indicator">
-            <div class="scroll-line"></div>
-            <span>Scroll to explore</span>
-        </div>
+
+        <a href="#trust-bar" class="hero-scroll">
+            <span>Scroll</span>
+            <div class="scroll-indicator"><div class="scroll-dot"></div></div>
+        </a>
     </section>
 
 
-    <!-- Marquee Section -->
-    <section class="marquee-section">
+    <!-- Trust Bar -->
+    <section class="trust-bar" id="trust-bar">
+        <div class="container">
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <div class="trust-icon"><i class="fas fa-shield-heart"></i></div>
+                    <div>
+                        <h4>Health Guarantee</h4>
+                        <p>14-day health warranty</p>
+                    </div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon"><i class="fas fa-truck-fast"></i></div>
+                    <div>
+                        <h4>Safe Transport</h4>
+                        <p>Safe & secure live transport</p>
+                    </div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon"><i class="fas fa-seedling"></i></div>
+                    <div>
+                        <h4>Ethical Breeding</h4>
+                        <p>Responsibly sourced</p>
+                    </div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon"><i class="fas fa-headset"></i></div>
+                    <div>
+                        <h4>Expert Support</h4>
+                        <p>Lifetime care guidance</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee">
         <div class="marquee-track">
-            <div class="marquee-content">
-                <span>🌱 Eco-Friendly</span>
-                <span>♻️ Sustainable</span>
-                <span>🌍 Carbon Neutral</span>
-                <span>🌿 Organic Materials</span>
-                <span>💚 Cruelty Free</span>
-                <span>🌱 Eco-Friendly</span>
-                <span>♻️ Sustainable</span>
-                <span>🌍 Carbon Neutral</span>
-                <span>🌿 Organic Materials</span>
-                <span>💚 Cruelty Free</span>
-            </div>
+            <span>🕷️ Tarantulas</span><span>·</span>
+            <span>🦂 Scorpions</span><span>·</span>
+            <span>🐍 Reptiles</span><span>·</span>
+            <span>🦎 Lizards</span><span>·</span>
+            <span>🐢 Turtles</span><span>·</span>
+            <span>🪳 Centipedes</span><span>·</span>
+            <span>🕷️ Tarantulas</span><span>·</span>
+            <span>🦂 Scorpions</span><span>·</span>
+            <span>🐍 Reptiles</span><span>·</span>
+            <span>🦎 Lizards</span><span>·</span>
+            <span>🐢 Turtles</span><span>·</span>
+            <span>🪳 Centipedes</span><span>·</span>
         </div>
-    </section>
+    </div>
+
 
     <!-- Products Section -->
-    <section class="products-section" id="products">
+    <section class="products" id="products">
         <div class="container">
-            <div class="section-header animate-on-scroll">
-                <span class="section-tag">Our Collection</span>
-                <h2 class="section-title">Sustainable Essentials</h2>
-                <p class="section-subtitle">Handpicked eco-friendly products for conscious living</p>
+            <div class="section-head reveal">
+                <span class="eyebrow">Featured Companions</span>
+                <h2 class="section-title">Discover Your Forever<br><em>Companion</em></h2>
+                <p class="section-sub">Discover our most sought-after exotic pets, ready to find their forever homes.</p>
             </div>
 
-            <div class="product-filters animate-on-scroll">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="home">Home</button>
-                <button class="filter-btn" data-filter="personal">Personal Care</button>
-                <button class="filter-btn" data-filter="kitchen">Kitchen</button>
-                <button class="filter-btn" data-filter="lifestyle">Lifestyle</button>
+            <div class="filter-pills reveal">
+                <button class="pill active" data-filter="all">All</button>
+                <button class="pill" data-filter="tarantulas">Tarantulas</button>
+                <button class="pill" data-filter="scorpions">Scorpions</button>
+                <button class="pill" data-filter="centipedes">Centipedes</button>
+                <button class="pill" data-filter="reptiles">Reptiles</button>
             </div>
 
             <div class="products-grid">
-                <div class="product-card animate-on-scroll" data-category="home">
-                    <div class="product-image">
-                        <div class="product-img-placeholder" style="background: linear-gradient(135deg, #a8e6cf, #88d8a8);">
-                            <i class="fas fa-leaf"></i>
+
+                <article class="product-card reveal" data-cat="tarantulas">
+                    <div class="pc-media" style="background:linear-gradient(135deg,#8B4513,#D2691E,#CD853F);">
+                        <div class="pc-emoji">🕷️</div>
+                        <span class="pc-badge">Featured</span>
+                        <span class="pc-cat">Tarantulas</span>
+                        <div class="pc-actions">
+                            <button class="pc-act" aria-label="Wishlist"><i class="far fa-heart"></i></button>
+                            <button class="pc-act" aria-label="Quick View"><i class="far fa-eye"></i></button>
                         </div>
-                        <div class="product-overlay">
-                            <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
-                            <button class="wishlist-btn"><i class="fas fa-heart"></i></button>
-                        </div>
-                        <span class="product-badge">Bestseller</span>
                     </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Bamboo Throw Blanket</h3>
-                        <p class="product-desc">Ultra-soft organic bamboo fiber blanket, naturally hypoallergenic</p>
-                        <div class="product-footer">
-                            <span class="product-price">$49.99</span>
-                            <button class="add-to-cart-btn" data-product="bamboo-blanket" data-price="49.99">
-                                <i class="fas fa-plus"></i> Add
+                    <div class="pc-body">
+                        <div class="pc-meta">
+                            <div class="pc-rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <span>(248)</span>
+                            </div>
+                        </div>
+                        <h3 class="pc-name">Mexican Redknee Tarantula</h3>
+                        <p class="pc-latin"><i>Brachypelma smithi</i></p>
+                        <p class="pc-desc">Iconic and docile species known for striking coloration and long lifespan. Perfect for beginners.</p>
+                        <div class="pc-foot">
+                            <div class="pc-price">
+                                <span class="pc-price-label">Starting at</span>
+                                <strong>$249.00</strong>
+                            </div>
+                            <button class="pc-cart-btn" data-product="mexican-redknee" data-price="249.00">
+                                <i class="fas fa-plus"></i>
                             </button>
                         </div>
                     </div>
-                </div>
+                </article>
 
 
-                <div class="product-card animate-on-scroll" data-category="personal">
-                    <div class="product-image">
-                        <div class="product-img-placeholder" style="background: linear-gradient(135deg, #ffd3b6, #ffaaa5);">
-                            <i class="fas fa-spa"></i>
+                <article class="product-card reveal" data-cat="tarantulas">
+                    <div class="pc-media" style="background:linear-gradient(135deg,#1e3a8a,#0e7490,#15803d);">
+                        <div class="pc-emoji">🕸️</div>
+                        <span class="pc-badge">Featured</span>
+                        <span class="pc-cat">Tarantulas</span>
+                        <div class="pc-actions">
+                            <button class="pc-act"><i class="far fa-heart"></i></button>
+                            <button class="pc-act"><i class="far fa-eye"></i></button>
                         </div>
-                        <div class="product-overlay">
-                            <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
-                            <button class="wishlist-btn"><i class="fas fa-heart"></i></button>
-                        </div>
-                        <span class="product-badge new">New</span>
                     </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Organic Skincare Set</h3>
-                        <p class="product-desc">100% natural ingredients, zero chemicals, plastic-free packaging</p>
-                        <div class="product-footer">
-                            <span class="product-price">$34.99</span>
-                            <button class="add-to-cart-btn" data-product="skincare-set" data-price="34.99">
-                                <i class="fas fa-plus"></i> Add
+                    <div class="pc-body">
+                        <div class="pc-meta">
+                            <div class="pc-rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <span>(186)</span>
+                            </div>
+                        </div>
+                        <h3 class="pc-name">Greenbottle Blue Tarantula</h3>
+                        <p class="pc-latin"><i>Chromatopelma cyaneopubescens</i></p>
+                        <p class="pc-desc">Vibrant blue legs and green carapace. A heavy webber and stunning display tarantula.</p>
+                        <div class="pc-foot">
+                            <div class="pc-price">
+                                <span class="pc-price-label">Starting at</span>
+                                <strong>$320.00</strong>
+                            </div>
+                            <button class="pc-cart-btn" data-product="greenbottle-blue" data-price="320.00">
+                                <i class="fas fa-plus"></i>
                             </button>
                         </div>
                     </div>
-                </div>
+                </article>
 
-                <div class="product-card animate-on-scroll" data-category="kitchen">
-                    <div class="product-image">
-                        <div class="product-img-placeholder" style="background: linear-gradient(135deg, #c3bef0, #a29bfe);">
-                            <i class="fas fa-mug-hot"></i>
-                        </div>
-                        <div class="product-overlay">
-                            <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
-                            <button class="wishlist-btn"><i class="fas fa-heart"></i></button>
+                <article class="product-card reveal" data-cat="scorpions">
+                    <div class="pc-media" style="background:linear-gradient(135deg,#facc15,#eab308,#a16207);">
+                        <div class="pc-emoji">🦂</div>
+                        <span class="pc-badge danger">Expert Only</span>
+                        <span class="pc-cat">Scorpions</span>
+                        <div class="pc-actions">
+                            <button class="pc-act"><i class="far fa-heart"></i></button>
+                            <button class="pc-act"><i class="far fa-eye"></i></button>
                         </div>
                     </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Reusable Coffee Cup</h3>
-                        <p class="product-desc">Handcrafted ceramic cup with cork sleeve, dishwasher safe</p>
-                        <div class="product-footer">
-                            <span class="product-price">$24.99</span>
-                            <button class="add-to-cart-btn" data-product="coffee-cup" data-price="24.99">
-                                <i class="fas fa-plus"></i> Add
+                    <div class="pc-body">
+                        <div class="pc-meta">
+                            <div class="pc-rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                <span>(94)</span>
+                            </div>
+                        </div>
+                        <h3 class="pc-name">Deathstalker Scorpion</h3>
+                        <p class="pc-latin"><i>Leiurus quinquestriatus</i></p>
+                        <p class="pc-desc">Extremely dangerous and highly venomous. Only for the most experienced and careful keepers.</p>
+                        <div class="pc-foot">
+                            <div class="pc-price">
+                                <span class="pc-price-label">Starting at</span>
+                                <strong>$480.00</strong>
+                            </div>
+                            <button class="pc-cart-btn" data-product="deathstalker" data-price="480.00">
+                                <i class="fas fa-plus"></i>
                             </button>
                         </div>
                     </div>
-                </div>
+                </article>
 
-                <div class="product-card animate-on-scroll" data-category="lifestyle">
-                    <div class="product-image">
-                        <div class="product-img-placeholder" style="background: linear-gradient(135deg, #ffeaa7, #fdcb6e);">
-                            <i class="fas fa-bag-shopping"></i>
+
+                <article class="product-card reveal" data-cat="centipedes">
+                    <div class="pc-media" style="background:linear-gradient(135deg,#7c2d12,#b91c1c,#dc2626);">
+                        <div class="pc-emoji">🐛</div>
+                        <span class="pc-badge danger">Expert Only</span>
+                        <span class="pc-cat">Centipedes</span>
+                        <div class="pc-actions">
+                            <button class="pc-act"><i class="far fa-heart"></i></button>
+                            <button class="pc-act"><i class="far fa-eye"></i></button>
                         </div>
-                        <div class="product-overlay">
-                            <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
-                            <button class="wishlist-btn"><i class="fas fa-heart"></i></button>
-                        </div>
-                        <span class="product-badge sale">-20%</span>
                     </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Hemp Canvas Tote</h3>
-                        <p class="product-desc">Durable hemp tote bag, perfect for everyday sustainable shopping</p>
-                        <div class="product-footer">
-                            <span class="product-price">$19.99</span>
-                            <button class="add-to-cart-btn" data-product="hemp-tote" data-price="19.99">
-                                <i class="fas fa-plus"></i> Add
+                    <div class="pc-body">
+                        <div class="pc-meta">
+                            <div class="pc-rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <span>(63)</span>
+                            </div>
+                        </div>
+                        <h3 class="pc-name">Amazonian Giant Centipede</h3>
+                        <p class="pc-latin"><i>Scolopendra gigantea</i></p>
+                        <p class="pc-desc">The largest centipede in the world. Exceptionally fast, aggressive, and a true monster invertebrate.</p>
+                        <div class="pc-foot">
+                            <div class="pc-price">
+                                <span class="pc-price-label">Starting at</span>
+                                <strong>$650.00</strong>
+                            </div>
+                            <button class="pc-cart-btn" data-product="giant-centipede" data-price="650.00">
+                                <i class="fas fa-plus"></i>
                             </button>
                         </div>
                     </div>
-                </div>
+                </article>
 
-
-                <div class="product-card animate-on-scroll" data-category="home">
-                    <div class="product-image">
-                        <div class="product-img-placeholder" style="background: linear-gradient(135deg, #81ecec, #00cec9);">
-                            <i class="fas fa-couch"></i>
-                        </div>
-                        <div class="product-overlay">
-                            <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
-                            <button class="wishlist-btn"><i class="fas fa-heart"></i></button>
+                <article class="product-card reveal" data-cat="reptiles">
+                    <div class="pc-media" style="background:linear-gradient(135deg,#16a34a,#15803d,#166534);">
+                        <div class="pc-emoji">🦎</div>
+                        <span class="pc-badge new">New</span>
+                        <span class="pc-cat">Reptiles</span>
+                        <div class="pc-actions">
+                            <button class="pc-act"><i class="far fa-heart"></i></button>
+                            <button class="pc-act"><i class="far fa-eye"></i></button>
                         </div>
                     </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Recycled Cotton Cushion</h3>
-                        <p class="product-desc">Made from 100% recycled cotton, naturally dyed with plant pigments</p>
-                        <div class="product-footer">
-                            <span class="product-price">$29.99</span>
-                            <button class="add-to-cart-btn" data-product="cotton-cushion" data-price="29.99">
-                                <i class="fas fa-plus"></i> Add
+                    <div class="pc-body">
+                        <div class="pc-meta">
+                            <div class="pc-rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <span>(312)</span>
+                            </div>
+                        </div>
+                        <h3 class="pc-name">Crested Gecko</h3>
+                        <p class="pc-latin"><i>Correlophus ciliatus</i></p>
+                        <p class="pc-desc">Friendly, low-maintenance gecko with eyelash-like crests. Ideal for first-time reptile keepers.</p>
+                        <div class="pc-foot">
+                            <div class="pc-price">
+                                <span class="pc-price-label">Starting at</span>
+                                <strong>$180.00</strong>
+                            </div>
+                            <button class="pc-cart-btn" data-product="crested-gecko" data-price="180.00">
+                                <i class="fas fa-plus"></i>
                             </button>
                         </div>
                     </div>
-                </div>
+                </article>
 
-                <div class="product-card animate-on-scroll" data-category="personal">
-                    <div class="product-image">
-                        <div class="product-img-placeholder" style="background: linear-gradient(135deg, #fab1a0, #e17055);">
-                            <i class="fas fa-pump-soap"></i>
+
+                <article class="product-card reveal" data-cat="reptiles">
+                    <div class="pc-media" style="background:linear-gradient(135deg,#0f766e,#134e4a,#064e3b);">
+                        <div class="pc-emoji">🐢</div>
+                        <span class="pc-badge">Bestseller</span>
+                        <span class="pc-cat">Reptiles</span>
+                        <div class="pc-actions">
+                            <button class="pc-act"><i class="far fa-heart"></i></button>
+                            <button class="pc-act"><i class="far fa-eye"></i></button>
                         </div>
-                        <div class="product-overlay">
-                            <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
-                            <button class="wishlist-btn"><i class="fas fa-heart"></i></button>
-                        </div>
-                        <span class="product-badge">Popular</span>
                     </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Natural Shampoo Bar</h3>
-                        <p class="product-desc">Zero-waste solid shampoo with essential oils, lasts 80+ washes</p>
-                        <div class="product-footer">
-                            <span class="product-price">$14.99</span>
-                            <button class="add-to-cart-btn" data-product="shampoo-bar" data-price="14.99">
-                                <i class="fas fa-plus"></i> Add
+                    <div class="pc-body">
+                        <div class="pc-meta">
+                            <div class="pc-rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <span>(421)</span>
+                            </div>
+                        </div>
+                        <h3 class="pc-name">Russian Tortoise</h3>
+                        <p class="pc-latin"><i>Testudo horsfieldii</i></p>
+                        <p class="pc-desc">Hardy, sociable tortoise with a 50+ year lifespan. A lifelong companion for the patient keeper.</p>
+                        <div class="pc-foot">
+                            <div class="pc-price">
+                                <span class="pc-price-label">Starting at</span>
+                                <strong>$295.00</strong>
+                            </div>
+                            <button class="pc-cart-btn" data-product="russian-tortoise" data-price="295.00">
+                                <i class="fas fa-plus"></i>
                             </button>
                         </div>
                     </div>
-                </div>
+                </article>
 
-                <div class="product-card animate-on-scroll" data-category="kitchen">
-                    <div class="product-image">
-                        <div class="product-img-placeholder" style="background: linear-gradient(135deg, #55efc4, #00b894);">
-                            <i class="fas fa-utensils"></i>
-                        </div>
-                        <div class="product-overlay">
-                            <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
-                            <button class="wishlist-btn"><i class="fas fa-heart"></i></button>
+                <article class="product-card reveal" data-cat="tarantulas">
+                    <div class="pc-media" style="background:linear-gradient(135deg,#581c87,#7c3aed,#a855f7);">
+                        <div class="pc-emoji">🕷️</div>
+                        <span class="pc-badge new">New</span>
+                        <span class="pc-cat">Tarantulas</span>
+                        <div class="pc-actions">
+                            <button class="pc-act"><i class="far fa-heart"></i></button>
+                            <button class="pc-act"><i class="far fa-eye"></i></button>
                         </div>
                     </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Bamboo Cutlery Set</h3>
-                        <p class="product-desc">Portable bamboo cutlery with carry case, replace single-use plastic</p>
-                        <div class="product-footer">
-                            <span class="product-price">$16.99</span>
-                            <button class="add-to-cart-btn" data-product="bamboo-cutlery" data-price="16.99">
-                                <i class="fas fa-plus"></i> Add
+                    <div class="pc-body">
+                        <div class="pc-meta">
+                            <div class="pc-rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <span>(156)</span>
+                            </div>
+                        </div>
+                        <h3 class="pc-name">Cobalt Blue Tarantula</h3>
+                        <p class="pc-latin"><i>Cyriopagopus lividus</i></p>
+                        <p class="pc-desc">Stunning electric-blue legs and a feisty temperament. A jewel for the experienced collector.</p>
+                        <div class="pc-foot">
+                            <div class="pc-price">
+                                <span class="pc-price-label">Starting at</span>
+                                <strong>$420.00</strong>
+                            </div>
+                            <button class="pc-cart-btn" data-product="cobalt-blue" data-price="420.00">
+                                <i class="fas fa-plus"></i>
                             </button>
                         </div>
                     </div>
-                </div>
+                </article>
 
-                <div class="product-card animate-on-scroll" data-category="lifestyle">
-                    <div class="product-image">
-                        <div class="product-img-placeholder" style="background: linear-gradient(135deg, #dfe6e9, #b2bec3);">
-                            <i class="fas fa-bottle-water"></i>
+
+                <article class="product-card reveal" data-cat="scorpions">
+                    <div class="pc-media" style="background:linear-gradient(135deg,#0c4a6e,#075985,#0e7490);">
+                        <div class="pc-emoji">🦂</div>
+                        <span class="pc-badge">Bestseller</span>
+                        <span class="pc-cat">Scorpions</span>
+                        <div class="pc-actions">
+                            <button class="pc-act"><i class="far fa-heart"></i></button>
+                            <button class="pc-act"><i class="far fa-eye"></i></button>
                         </div>
-                        <div class="product-overlay">
-                            <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
-                            <button class="wishlist-btn"><i class="fas fa-heart"></i></button>
-                        </div>
-                        <span class="product-badge new">New</span>
                     </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Stainless Steel Bottle</h3>
-                        <p class="product-desc">Double-wall insulated, keeps drinks cold 24h or hot 12h</p>
-                        <div class="product-footer">
-                            <span class="product-price">$32.99</span>
-                            <button class="add-to-cart-btn" data-product="steel-bottle" data-price="32.99">
-                                <i class="fas fa-plus"></i> Add
+                    <div class="pc-body">
+                        <div class="pc-meta">
+                            <div class="pc-rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <span>(287)</span>
+                            </div>
+                        </div>
+                        <h3 class="pc-name">Emperor Scorpion</h3>
+                        <p class="pc-latin"><i>Pandinus imperator</i></p>
+                        <p class="pc-desc">One of the largest scorpions, with mild venom. A gentle giant perfect for beginners.</p>
+                        <div class="pc-foot">
+                            <div class="pc-price">
+                                <span class="pc-price-label">Starting at</span>
+                                <strong>$220.00</strong>
+                            </div>
+                            <button class="pc-cart-btn" data-product="emperor-scorpion" data-price="220.00">
+                                <i class="fas fa-plus"></i>
                             </button>
                         </div>
                     </div>
-                </div>
+                </article>
+
+            </div>
+
+            <div class="view-all-wrap reveal">
+                <a href="#" class="btn btn-ghost btn-large">
+                    <span>View All Companions</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
         </div>
     </section>
 
 
-    <!-- About Section -->
-    <section class="about-section" id="about">
+    <!-- About / Story Section -->
+    <section class="about" id="about">
         <div class="container">
             <div class="about-grid">
-                <div class="about-visual animate-on-scroll">
-                    <div class="about-image-stack">
-                        <div class="about-img-1">
-                            <div class="img-placeholder" style="background: linear-gradient(135deg, #a8e6cf, #3dc1a6);">
-                                <i class="fas fa-seedling"></i>
-                            </div>
+                <div class="about-visual reveal-fade">
+                    <div class="about-stack">
+                        <div class="about-card-img" style="background:linear-gradient(135deg,#166534,#15803d);">
+                            <span class="huge-emoji">🌿</span>
                         </div>
-                        <div class="about-img-2">
-                            <div class="img-placeholder" style="background: linear-gradient(135deg, #ffeaa7, #fdcb6e);">
-                                <i class="fas fa-hand-holding-heart"></i>
-                            </div>
+                        <div class="about-card-img a-mid" style="background:linear-gradient(135deg,#854d0e,#a16207);">
+                            <span class="huge-emoji">🕷️</span>
                         </div>
-                        <div class="floating-card">
-                            <span class="fc-number">15+</span>
-                            <span class="fc-text">Years of Sustainability</span>
+                        <div class="about-stat-card">
+                            <div class="asc-row">
+                                <span class="asc-num" data-count="15">0</span>
+                                <span class="asc-plus">+</span>
+                            </div>
+                            <span class="asc-label">Years Caring<br>for Exotics</span>
                         </div>
                     </div>
                 </div>
-                <div class="about-content animate-on-scroll">
-                    <span class="section-tag">Our Story</span>
-                    <h2 class="section-title">Warming the World,<br>Naturally</h2>
-                    <p class="about-text">
-                        EcoWarm was born from a simple belief: comfort and sustainability can coexist beautifully. We source only the finest organic, recycled, and renewable materials to craft products that warm your home without harming our planet.
-                    </p>
-                    <p class="about-text">
-                        Every product in our collection tells a story of ethical craftsmanship, fair trade partnerships, and environmental stewardship. When you choose EcoWarm, you choose a greener future.
-                    </p>
-                    <div class="about-features">
-                        <div class="about-feature">
-                            <div class="af-icon"><i class="fas fa-recycle"></i></div>
-                            <div class="af-text">
-                                <h4>Zero Waste</h4>
-                                <p>Plastic-free packaging & shipping</p>
-                            </div>
+                <div class="about-content reveal">
+                    <span class="eyebrow">Our Story</span>
+                    <h2 class="section-title">Where Passion Meets<br><em>Expertise</em></h2>
+                    <p>EcoWarm began as a small nook for exotic pet enthusiasts. Today, we're a trusted home for tarantulas, scorpions, reptiles, and rare invertebrates — sourced ethically, raised with love.</p>
+                    <p>Every companion comes with a complete care guide, lifetime support, and a 14-day health guarantee. We don't just sell pets — we build lifelong partnerships.</p>
+
+                    <div class="about-stats">
+                        <div class="ab-stat">
+                            <strong data-count="12000">0</strong>
+                            <span>Happy Keepers</span>
                         </div>
-                        <div class="about-feature">
-                            <div class="af-icon"><i class="fas fa-globe-americas"></i></div>
-                            <div class="af-text">
-                                <h4>Carbon Neutral</h4>
-                                <p>Offset all our emissions since 2020</p>
-                            </div>
+                        <div class="ab-stat">
+                            <strong data-count="240">0</strong>
+                            <span>Species Available</span>
                         </div>
-                        <div class="about-feature">
-                            <div class="af-icon"><i class="fas fa-handshake"></i></div>
-                            <div class="af-text">
-                                <h4>Fair Trade</h4>
-                                <p>Ethical sourcing from local artisans</p>
-                            </div>
+                        <div class="ab-stat">
+                            <strong data-count="98">0</strong>
+                            <span>% Survival Rate</span>
                         </div>
                     </div>
+
+                    <a href="#contact" class="btn btn-primary">
+                        <span>Get in Touch</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
 
-    <!-- Features Section -->
-    <section class="features-section" id="features">
+    <!-- Care Guides -->
+    <section class="guides" id="guides">
         <div class="container">
-            <div class="section-header animate-on-scroll">
-                <span class="section-tag">Why EcoWarm</span>
-                <h2 class="section-title">Built Different, Built Better</h2>
-                <p class="section-subtitle">Our commitment to sustainability goes beyond products</p>
+            <div class="section-head reveal">
+                <span class="eyebrow">Care Guides</span>
+                <h2 class="section-title">Learn from the<br><em>Experts</em></h2>
+                <p class="section-sub">Comprehensive care guides written by passionate keepers and certified veterinarians.</p>
             </div>
-            <div class="features-grid">
-                <div class="feature-card animate-on-scroll">
-                    <div class="feature-icon">
-                        <i class="fas fa-tree"></i>
+
+            <div class="guides-grid">
+                <article class="guide-card reveal">
+                    <div class="guide-thumb" style="background:linear-gradient(135deg,#7c2d12,#9a3412);">
+                        <span class="guide-emoji">🕷️</span>
+                        <span class="guide-tag">Tarantulas</span>
                     </div>
-                    <h3>One Tree Per Order</h3>
-                    <p>Every purchase contributes to reforestation. We've planted over 50,000 trees worldwide.</p>
-                </div>
-                <div class="feature-card animate-on-scroll">
-                    <div class="feature-icon">
-                        <i class="fas fa-truck"></i>
+                    <div class="guide-body">
+                        <span class="guide-meta"><i class="far fa-clock"></i> 8 min read</span>
+                        <h3>The Beginner's Guide to Tarantula Keeping</h3>
+                        <p>Everything you need to know before bringing home your first tarantula — from enclosure setup to feeding schedules.</p>
+                        <a href="#" class="guide-link">Read more <i class="fas fa-arrow-right"></i></a>
                     </div>
-                    <h3>Green Shipping</h3>
-                    <p>Carbon-neutral delivery with biodegradable packaging materials on every shipment.</p>
-                </div>
-                <div class="feature-card animate-on-scroll">
-                    <div class="feature-icon">
-                        <i class="fas fa-award"></i>
+                </article>
+
+                <article class="guide-card reveal">
+                    <div class="guide-thumb" style="background:linear-gradient(135deg,#0c4a6e,#075985);">
+                        <span class="guide-emoji">🦂</span>
+                        <span class="guide-tag">Scorpions</span>
                     </div>
-                    <h3>Certified Organic</h3>
-                    <p>All products meet or exceed GOTS and OEKO-TEX certification standards.</p>
-                </div>
-                <div class="feature-card animate-on-scroll">
-                    <div class="feature-icon">
-                        <i class="fas fa-infinity"></i>
+                    <div class="guide-body">
+                        <span class="guide-meta"><i class="far fa-clock"></i> 12 min read</span>
+                        <h3>Scorpion Husbandry: Heat, Humidity & Habitat</h3>
+                        <p>Master the three pillars of successful scorpion care with our complete environmental setup walkthrough.</p>
+                        <a href="#" class="guide-link">Read more <i class="fas fa-arrow-right"></i></a>
                     </div>
-                    <h3>Lifetime Warranty</h3>
-                    <p>Built to last. We stand behind every product with our lifetime repair guarantee.</p>
-                </div>
+                </article>
+
+                <article class="guide-card reveal">
+                    <div class="guide-thumb" style="background:linear-gradient(135deg,#166534,#15803d);">
+                        <span class="guide-emoji">🦎</span>
+                        <span class="guide-tag">Reptiles</span>
+                    </div>
+                    <div class="guide-body">
+                        <span class="guide-meta"><i class="far fa-clock"></i> 15 min read</span>
+                        <h3>Reptile Lighting Demystified — UVB, Heat & More</h3>
+                        <p>The complete reference for getting reptile lighting right. Avoid common pitfalls that affect health.</p>
+                        <a href="#" class="guide-link">Read more <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials-section" id="testimonials">
+
+    <!-- Testimonials -->
+    <section class="testimonials">
         <div class="container">
-            <div class="section-header animate-on-scroll">
-                <span class="section-tag">Testimonials</span>
-                <h2 class="section-title">Loved by Thousands</h2>
-                <p class="section-subtitle">See what our community says about EcoWarm</p>
+            <div class="section-head reveal">
+                <span class="eyebrow">Testimonials</span>
+                <h2 class="section-title">Loved by Keepers<br><em>Worldwide</em></h2>
             </div>
-            <div class="testimonials-slider">
-                <div class="testimonial-card animate-on-scroll">
-                    <div class="testimonial-stars">
+
+            <div class="testi-grid">
+                <article class="testi-card reveal">
+                    <div class="testi-stars">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
-                    <p class="testimonial-text">"The bamboo blanket is incredibly soft! I love knowing my purchase helps plant trees. EcoWarm has changed how I think about shopping."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar" style="background: linear-gradient(135deg, #a8e6cf, #88d8a8);">S</div>
-                        <div class="author-info">
+                    <p class="testi-quote">"My Mexican Redknee arrived in perfect condition. The care guide answered every question and the support team genuinely cares."</p>
+                    <div class="testi-author">
+                        <div class="testi-avatar" style="background:linear-gradient(135deg,#a8e6cf,#3dc1a6)">SM</div>
+                        <div>
                             <h4>Sarah Mitchell</h4>
-                            <span>Verified Buyer</span>
+                            <span>Verified Keeper · 2 years</span>
                         </div>
                     </div>
-                </div>
-                <div class="testimonial-card animate-on-scroll">
-                    <div class="testimonial-stars">
+                </article>
+
+                <article class="testi-card reveal">
+                    <div class="testi-stars">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
-                    <p class="testimonial-text">"Finally, a brand that truly walks the talk on sustainability. The quality is premium and the packaging is 100% compostable. Highly recommend!"</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar" style="background: linear-gradient(135deg, #ffd3b6, #ffaaa5);">J</div>
-                        <div class="author-info">
+                    <p class="testi-quote">"Finally a store that treats exotics with the respect they deserve. Their breeding ethics and packaging are unmatched."</p>
+                    <div class="testi-author">
+                        <div class="testi-avatar" style="background:linear-gradient(135deg,#ffd3b6,#ff9a76)">JR</div>
+                        <div>
                             <h4>James Rodriguez</h4>
-                            <span>Verified Buyer</span>
+                            <span>Verified Keeper · 5 years</span>
                         </div>
                     </div>
-                </div>
-                <div class="testimonial-card animate-on-scroll">
-                    <div class="testimonial-stars">
+                </article>
+
+                <article class="testi-card reveal">
+                    <div class="testi-stars">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
                     </div>
-                    <p class="testimonial-text">"I've replaced all my kitchen essentials with EcoWarm products. The bamboo cutlery set is a game-changer for reducing my daily plastic waste."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar" style="background: linear-gradient(135deg, #c3bef0, #a29bfe);">E</div>
-                        <div class="author-info">
+                    <p class="testi-quote">"The Crested Gecko is thriving thanks to the detailed setup guide. EcoWarm sets a new standard for exotic pet shops."</p>
+                    <div class="testi-author">
+                        <div class="testi-avatar" style="background:linear-gradient(135deg,#c3bef0,#a29bfe)">EC</div>
+                        <div>
                             <h4>Emma Chen</h4>
-                            <span>Verified Buyer</span>
+                            <span>Verified Keeper · 1 year</span>
                         </div>
                     </div>
-                </div>
+                </article>
             </div>
         </div>
     </section>
 
 
-    <!-- Newsletter Section -->
-    <section class="newsletter-section">
+    <!-- CTA / Newsletter -->
+    <section class="cta-section">
         <div class="container">
-            <div class="newsletter-content animate-on-scroll">
-                <h2>Join the Green Movement</h2>
-                <p>Subscribe for exclusive offers, sustainability tips, and early access to new products.</p>
-                <form class="newsletter-form" id="newsletterForm">
-                    <input type="email" placeholder="Enter your email" required>
-                    <button type="submit" class="btn btn-primary">
-                        <span>Subscribe</span>
+            <div class="cta-card reveal">
+                <div class="cta-orb cta-orb-1"></div>
+                <div class="cta-orb cta-orb-2"></div>
+                <div class="cta-content">
+                    <span class="cta-eyebrow"><i class="fas fa-envelope-open-text"></i> Newsletter</span>
+                    <h2>Join the EcoWarm <em>Community</em></h2>
+                    <p>Get monthly care tips, new arrival alerts, and exclusive subscriber-only discounts. No spam, ever.</p>
+                    <form class="cta-form" id="newsletterForm">
+                        <input type="email" placeholder="your@email.com" required>
+                        <button type="submit" class="btn btn-primary">
+                            <span>Subscribe</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info reveal">
+                    <span class="eyebrow">Get in Touch</span>
+                    <h2 class="section-title">Let's Talk About<br><em>Your Companion</em></h2>
+                    <p>Have questions about a specific species? Need care advice? Our team of exotic pet experts is here to help, 7 days a week.</p>
+
+                    <ul class="contact-list">
+                        <li>
+                            <div class="ci-icn"><i class="fas fa-envelope"></i></div>
+                            <div>
+                                <h4>Email</h4>
+                                <a href="mailto:hello@ecowarm.co">hello@ecowarm.co</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="ci-icn"><i class="fas fa-phone"></i></div>
+                            <div>
+                                <h4>Phone</h4>
+                                <a href="tel:+15551234567">+1 (555) 123-4567</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="ci-icn"><i class="fas fa-location-dot"></i></div>
+                            <div>
+                                <h4>Visit</h4>
+                                <p>123 Wild Ave, Eco City, EC 45678</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="social-row">
+                        <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-btn"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-btn"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-btn"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <form class="contact-form reveal" id="contactForm">
+                    <div class="cf-row">
+                        <div class="cf-group">
+                            <label>Your Name</label>
+                            <input type="text" required placeholder="Jane Doe">
+                        </div>
+                        <div class="cf-group">
+                            <label>Email</label>
+                            <input type="email" required placeholder="jane@example.com">
+                        </div>
+                    </div>
+                    <div class="cf-group">
+                        <label>Subject</label>
+                        <input type="text" placeholder="Care advice for...">
+                    </div>
+                    <div class="cf-group">
+                        <label>Message</label>
+                        <textarea rows="5" required placeholder="Tell us what's on your mind..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <span>Send Message</span>
                         <i class="fas fa-paper-plane"></i>
                     </button>
                 </form>
@@ -497,130 +748,92 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact-section" id="contact">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <span class="section-tag">Get in Touch</span>
-                <h2 class="section-title">Let's Connect</h2>
-                <p class="section-subtitle">Have questions? We'd love to hear from you.</p>
-            </div>
-            <div class="contact-grid">
-                <div class="contact-info animate-on-scroll">
-                    <div class="contact-item">
-                        <div class="ci-icon"><i class="fas fa-envelope"></i></div>
-                        <div class="ci-text">
-                            <h4>Email Us</h4>
-                            <p>hello@ecowarm.co</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="ci-icon"><i class="fas fa-phone"></i></div>
-                        <div class="ci-text">
-                            <h4>Call Us</h4>
-                            <p>+1 (555) 123-4567</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="ci-icon"><i class="fas fa-map-marker-alt"></i></div>
-                        <div class="ci-text">
-                            <h4>Visit Us</h4>
-                            <p>123 Green Street, Eco City, EC 45678</p>
-                        </div>
-                    </div>
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
-                    </div>
-                </div>
-                <form class="contact-form animate-on-scroll" id="contactForm">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Your Email" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" placeholder="Subject">
-                    </div>
-                    <div class="form-group">
-                        <textarea placeholder="Your Message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">
-                        <span>Send Message</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-grid">
+            <div class="footer-top">
                 <div class="footer-brand">
                     <a href="#" class="logo">
-                        <span class="logo-icon">🌿</span>
-                        <span class="logo-text">EcoWarm</span>
+                        <span class="logo-mark"><i class="fas fa-leaf"></i></span>
+                        <div class="logo-text-wrap">
+                            <span class="logo-title">EcoWarm</span>
+                            <span class="logo-sub">Premium Exotics</span>
+                        </div>
                     </a>
-                    <p>Sustainable living made beautiful. Every product, every choice, every day — for a warmer, greener world.</p>
+                    <p>Bring the wild into your home — responsibly. Premium exotic pets, expert guidance, lifetime support.</p>
+                    <div class="social-row">
+                        <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-btn"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-btn"><i class="fab fa-youtube"></i></a>
+                    </div>
                 </div>
-                <div class="footer-links">
-                    <h4>Shop</h4>
-                    <a href="#">Home Essentials</a>
-                    <a href="#">Personal Care</a>
-                    <a href="#">Kitchen</a>
-                    <a href="#">Lifestyle</a>
-                </div>
-                <div class="footer-links">
-                    <h4>Company</h4>
-                    <a href="#">About Us</a>
-                    <a href="#">Sustainability</a>
-                    <a href="#">Careers</a>
-                    <a href="#">Press</a>
-                </div>
-                <div class="footer-links">
-                    <h4>Support</h4>
-                    <a href="#">FAQ</a>
-                    <a href="#">Shipping</a>
-                    <a href="#">Returns</a>
-                    <a href="#">Contact</a>
+                <div class="footer-cols">
+                    <div class="footer-col">
+                        <h4>Shop</h4>
+                        <a href="#">Tarantulas</a>
+                        <a href="#">Scorpions</a>
+                        <a href="#">Reptiles</a>
+                        <a href="#">Centipedes</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Resources</h4>
+                        <a href="#">Care Guides</a>
+                        <a href="#">Species Database</a>
+                        <a href="#">Vet Network</a>
+                        <a href="#">Blog</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <a href="#">About Us</a>
+                        <a href="#">Ethics & Sourcing</a>
+                        <a href="#">Careers</a>
+                        <a href="#">Press</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Support</h4>
+                        <a href="#">FAQ</a>
+                        <a href="#">Shipping</a>
+                        <a href="#">Returns</a>
+                        <a href="admin/login.html">Admin Login</a>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 EcoWarm. All rights reserved.</p>
-                <p class="creator-credit">Created with 💚 by <strong>Aditya Kumar Sah</strong></p>
+                <p class="creator">Crafted with <span class="heart">💚</span> by <strong>Aditya Kumar Sah</strong></p>
             </div>
         </div>
     </footer>
 
-    <!-- Cart Sidebar -->
+    <!-- Cart Drawer -->
     <div class="cart-overlay" id="cartOverlay"></div>
-    <div class="cart-sidebar" id="cartSidebar">
-        <div class="cart-header">
+    <aside class="cart-drawer" id="cartDrawer">
+        <header class="cart-head">
             <h3><i class="fas fa-shopping-bag"></i> Your Cart</h3>
             <button class="cart-close" id="cartClose"><i class="fas fa-times"></i></button>
-        </div>
-        <div class="cart-items" id="cartItems">
+        </header>
+        <div class="cart-list" id="cartList">
             <div class="cart-empty">
-                <i class="fas fa-leaf"></i>
-                <p>Your cart is empty</p>
-                <span>Start shopping sustainably!</span>
+                <div class="ce-icon">🛒</div>
+                <h4>Your cart is empty</h4>
+                <p>Discover our exotic companions</p>
             </div>
         </div>
-        <div class="cart-footer" id="cartFooter" style="display:none;">
-            <div class="cart-total">
-                <span>Total:</span>
-                <span class="total-amount">$0.00</span>
+        <footer class="cart-foot" id="cartFoot" style="display:none;">
+            <div class="cart-totals">
+                <span>Subtotal</span>
+                <strong id="cartTotal">$0.00</strong>
             </div>
-            <button class="btn btn-primary btn-full">Checkout</button>
-        </div>
-    </div>
+            <button class="btn btn-primary btn-full">
+                <span>Checkout</span>
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </footer>
+    </aside>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
 
     <!-- Scripts -->
     <script src="assets/js/main.js"></script>
