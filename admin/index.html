@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoWarm Admin · Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/admin.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<!-- Sidebar -->
+<aside class="sidebar" id="sidebar">
+    <div class="sb-head">
+        <a href="#" class="sb-logo">
+            <span class="logo-mark"><i class="fas fa-leaf"></i></span>
+            <div>
+                <strong>EcoWarm</strong>
+                <span>Admin Panel</span>
+            </div>
+        </a>
+        <button class="sb-toggle" id="sbToggle"><i class="fas fa-angle-left"></i></button>
+    </div>
+
+    <nav class="sb-nav">
+        <div class="sb-section">
+            <span class="sb-label">Overview</span>
+            <a href="#" class="sb-item active" data-page="dashboard">
+                <i class="fas fa-gauge-high"></i><span>Dashboard</span>
+            </a>
+            <a href="#" class="sb-item" data-page="analytics">
+                <i class="fas fa-chart-line"></i><span>Analytics</span>
+            </a>
+        </div>
+        <div class="sb-section">
+            <span class="sb-label">Catalog</span>
+            <a href="#" class="sb-item" data-page="products">
+                <i class="fas fa-box"></i><span>Products</span>
+                <span class="sb-tag">42</span>
+            </a>
+            <a href="#" class="sb-item" data-page="categories">
+                <i class="fas fa-tags"></i><span>Categories</span>
+            </a>
+        </div>
+        <div class="sb-section">
+            <span class="sb-label">Sales</span>
+            <a href="#" class="sb-item" data-page="orders">
+                <i class="fas fa-shopping-cart"></i><span>Orders</span>
+                <span class="sb-tag warn">12</span>
+            </a>
+            <a href="#" class="sb-item" data-page="customers">
+                <i class="fas fa-users"></i><span>Customers</span>
+            </a>
+        </div>
+        <div class="sb-section">
+            <span class="sb-label">Engagement</span>
+            <a href="#" class="sb-item" data-page="messages">
+                <i class="fas fa-envelope"></i><span>Messages</span>
+                <span class="sb-tag danger">5</span>
+            </a>
+            <a href="#" class="sb-item" data-page="newsletter">
+                <i class="fas fa-paper-plane"></i><span>Newsletter</span>
+            </a>
+        </div>
+        <div class="sb-section">
+            <span class="sb-label">System</span>
+            <a href="#" class="sb-item" data-page="settings">
+                <i class="fas fa-gear"></i><span>Settings</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="sb-foot">
+        <div class="sb-profile">
+            <div class="sb-avatar">A</div>
+            <div class="sb-user">
+                <strong>Admin</strong>
+                <span>Super Admin</span>
+            </div>
+            <button class="sb-logout" id="logoutBtn" title="Sign Out">
+                <i class="fas fa-right-from-bracket"></i>
+            </button>
+        </div>
+    </div>
+</aside>
+
+
+<!-- Main -->
+<main class="main" id="main">
+    <!-- Topbar -->
+    <header class="topbar">
+        <div class="tb-left">
+            <button class="tb-menu" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+            <div class="tb-search">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search products, orders, customers...">
+                <kbd>⌘ K</kbd>
+            </div>
+        </div>
+        <div class="tb-right">
+            <button class="theme-toggle" id="themeToggle">
+                <i class="fas fa-sun sun-icon"></i>
+                <i class="fas fa-moon moon-icon"></i>
+                <span class="toggle-thumb"></span>
+            </button>
+            <button class="tb-icon" title="Notifications">
+                <i class="fas fa-bell"></i>
+                <span class="tb-dot"></span>
+            </button>
+            <a href="../index.html" class="tb-store" target="_blank">
+                <i class="fas fa-arrow-up-right-from-square"></i>
+                <span>View Store</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Pages -->
+    <div class="pg-wrap">
+
+        <!-- DASHBOARD -->
+        <section class="pg active" id="pg-dashboard">
+            <div class="pg-head">
+                <div>
+                    <h1>Welcome back, <em>Admin</em> 🌿</h1>
+                    <p>Here's what's happening with your store today.</p>
+                </div>
+                <div class="pg-actions">
+                    <button class="btn btn-outline"><i class="fas fa-download"></i><span>Export</span></button>
+                    <button class="btn btn-primary"><i class="fas fa-plus"></i><span>Quick Add</span></button>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="stats">
+                <div class="stat animate-in" data-trend="up">
+                    <div class="stat-top">
+                        <div class="stat-icon" style="background:linear-gradient(135deg,#2d5016,#5a8d3e)"><i class="fas fa-dollar-sign"></i></div>
+                        <span class="stat-trend up"><i class="fas fa-arrow-trend-up"></i> 12.5%</span>
+                    </div>
+                    <h3 data-count="48592" data-prefix="$">$0</h3>
+                    <p>Total Revenue</p>
+                    <div class="stat-spark"><div class="spark-bar" style="--h:40%"></div><div class="spark-bar" style="--h:60%"></div><div class="spark-bar" style="--h:50%"></div><div class="spark-bar" style="--h:75%"></div><div class="spark-bar" style="--h:65%"></div><div class="spark-bar" style="--h:90%"></div><div class="spark-bar" style="--h:85%"></div></div>
+                </div>
+
+                <div class="stat animate-in">
+                    <div class="stat-top">
+                        <div class="stat-icon" style="background:linear-gradient(135deg,#7c3aed,#a855f7)"><i class="fas fa-shopping-bag"></i></div>
+                        <span class="stat-trend up"><i class="fas fa-arrow-trend-up"></i> 8.2%</span>
+                    </div>
+                    <h3 data-count="1284">0</h3>
+                    <p>Total Orders</p>
+                    <div class="stat-spark"><div class="spark-bar" style="--h:50%"></div><div class="spark-bar" style="--h:70%"></div><div class="spark-bar" style="--h:60%"></div><div class="spark-bar" style="--h:65%"></div><div class="spark-bar" style="--h:80%"></div><div class="spark-bar" style="--h:75%"></div><div class="spark-bar" style="--h:90%"></div></div>
+                </div>
+
+                <div class="stat animate-in">
+                    <div class="stat-top">
+                        <div class="stat-icon" style="background:linear-gradient(135deg,#d4a574,#f59e0b)"><i class="fas fa-users"></i></div>
+                        <span class="stat-trend up"><i class="fas fa-arrow-trend-up"></i> 15.3%</span>
+                    </div>
+                    <h3 data-count="892">0</h3>
+                    <p>Customers</p>
+                    <div class="stat-spark"><div class="spark-bar" style="--h:30%"></div><div class="spark-bar" style="--h:45%"></div><div class="spark-bar" style="--h:55%"></div><div class="spark-bar" style="--h:70%"></div><div class="spark-bar" style="--h:85%"></div><div class="spark-bar" style="--h:75%"></div><div class="spark-bar" style="--h:95%"></div></div>
+                </div>
+
+                <div class="stat animate-in">
+                    <div class="stat-top">
+                        <div class="stat-icon" style="background:linear-gradient(135deg,#0e7490,#06b6d4)"><i class="fas fa-spider"></i></div>
+                        <span class="stat-trend up"><i class="fas fa-arrow-trend-up"></i> 23%</span>
+                    </div>
+                    <h3 data-count="240">0</h3>
+                    <p>Species in Stock</p>
+                    <div class="stat-spark"><div class="spark-bar" style="--h:60%"></div><div class="spark-bar" style="--h:50%"></div><div class="spark-bar" style="--h:75%"></div><div class="spark-bar" style="--h:80%"></div><div class="spark-bar" style="--h:70%"></div><div class="spark-bar" style="--h:90%"></div><div class="spark-bar" style="--h:95%"></div></div>
+                </div>
+            </div>
+
+
+            <!-- Charts Row -->
+            <div class="chart-row">
+                <div class="card animate-in chart-big">
+                    <div class="card-head">
+                        <div>
+                            <h3>Revenue Overview</h3>
+                            <span class="card-sub">Last 7 months performance</span>
+                        </div>
+                        <select class="card-select">
+                            <option>Last 7 months</option>
+                            <option>This year</option>
+                            <option>Last year</option>
+                        </select>
+                    </div>
+                    <canvas id="revChart" height="100"></canvas>
+                </div>
+
+                <div class="card animate-in">
+                    <div class="card-head">
+                        <div>
+                            <h3>Top Categories</h3>
+                            <span class="card-sub">By total sales</span>
+                        </div>
+                    </div>
+                    <canvas id="catChart" height="180"></canvas>
+                </div>
+            </div>
+
+            <!-- Activity Row -->
+            <div class="activity-row">
+                <div class="card animate-in">
+                    <div class="card-head">
+                        <h3>Recent Orders</h3>
+                        <a href="#" class="card-link">View All <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="ord-list">
+                        <div class="ord-item">
+                            <div class="ord-icn" style="background:linear-gradient(135deg,#8B4513,#D2691E)">🕷️</div>
+                            <div class="ord-info"><h4>Mexican Redknee Tarantula</h4><span>Sarah M. · 2 mins ago</span></div>
+                            <strong>$249</strong>
+                            <span class="badge ok">Completed</span>
+                        </div>
+                        <div class="ord-item">
+                            <div class="ord-icn" style="background:linear-gradient(135deg,#facc15,#a16207)">🦂</div>
+                            <div class="ord-info"><h4>Deathstalker Scorpion</h4><span>James R. · 15 mins</span></div>
+                            <strong>$480</strong>
+                            <span class="badge warn">Pending</span>
+                        </div>
+                        <div class="ord-item">
+                            <div class="ord-icn" style="background:linear-gradient(135deg,#16a34a,#15803d)">🦎</div>
+                            <div class="ord-info"><h4>Crested Gecko</h4><span>Emma C. · 1 hour</span></div>
+                            <strong>$180</strong>
+                            <span class="badge info">Processing</span>
+                        </div>
+                        <div class="ord-item">
+                            <div class="ord-icn" style="background:linear-gradient(135deg,#581c87,#a855f7)">🕷️</div>
+                            <div class="ord-info"><h4>Cobalt Blue Tarantula</h4><span>Michael B. · 3h</span></div>
+                            <strong>$420</strong>
+                            <span class="badge ok">Completed</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card animate-in">
+                    <div class="card-head">
+                        <h3>Top Products</h3>
+                        <a href="#" class="card-link">View All <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="top-prod">
+                        <div class="tp-item">
+                            <span class="tp-rank">01</span>
+                            <div class="tp-info">
+                                <h4>Mexican Redknee Tarantula</h4>
+                                <div class="tp-bar"><div class="tp-fill" style="width:92%;background:linear-gradient(90deg,#2d5016,#5a8d3e)"></div></div>
+                            </div>
+                            <span class="tp-num">428</span>
+                        </div>
+                        <div class="tp-item">
+                            <span class="tp-rank">02</span>
+                            <div class="tp-info">
+                                <h4>Emperor Scorpion</h4>
+                                <div class="tp-bar"><div class="tp-fill" style="width:78%;background:linear-gradient(90deg,#7c3aed,#a855f7)"></div></div>
+                            </div>
+                            <span class="tp-num">364</span>
+                        </div>
+                        <div class="tp-item">
+                            <span class="tp-rank">03</span>
+                            <div class="tp-info">
+                                <h4>Crested Gecko</h4>
+                                <div class="tp-bar"><div class="tp-fill" style="width:65%;background:linear-gradient(90deg,#16a34a,#22c55e)"></div></div>
+                            </div>
+                            <span class="tp-num">298</span>
+                        </div>
+                        <div class="tp-item">
+                            <span class="tp-rank">04</span>
+                            <div class="tp-info">
+                                <h4>Russian Tortoise</h4>
+                                <div class="tp-bar"><div class="tp-fill" style="width:52%;background:linear-gradient(90deg,#0e7490,#06b6d4)"></div></div>
+                            </div>
+                            <span class="tp-num">245</span>
+                        </div>
+                        <div class="tp-item">
+                            <span class="tp-rank">05</span>
+                            <div class="tp-info">
+                                <h4>Greenbottle Blue</h4>
+                                <div class="tp-bar"><div class="tp-fill" style="width:41%;background:linear-gradient(90deg,#d4a574,#f59e0b)"></div></div>
+                            </div>
+                            <span class="tp-num">187</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- PRODUCTS -->
+        <section class="pg" id="pg-products">
+            <div class="pg-head">
+                <div>
+                    <h1>Products</h1>
+                    <p>Manage your product catalog</p>
+                </div>
+                <div class="pg-actions">
+                    <button class="btn btn-outline"><i class="fas fa-filter"></i><span>Filter</span></button>
+                    <button class="btn btn-primary" id="addProductBtn"><i class="fas fa-plus"></i><span>Add Product</span></button>
+                </div>
+            </div>
+
+            <div class="filters">
+                <div class="filter-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="prodSearch" placeholder="Search products...">
+                </div>
+                <select class="filter-sel" id="prodCatFilter">
+                    <option value="all">All Categories</option>
+                    <option value="tarantulas">Tarantulas</option>
+                    <option value="scorpions">Scorpions</option>
+                    <option value="centipedes">Centipedes</option>
+                    <option value="reptiles">Reptiles</option>
+                </select>
+                <select class="filter-sel">
+                    <option>All Status</option>
+                    <option>Active</option>
+                    <option>Out of Stock</option>
+                </select>
+            </div>
+
+            <div class="table-card">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox"></th>
+                            <th>Product</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Stock</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="prodTbody"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ORDERS -->
+        <section class="pg" id="pg-orders">
+            <div class="pg-head">
+                <div>
+                    <h1>Orders</h1>
+                    <p>Manage and track customer orders</p>
+                </div>
+            </div>
+            <div class="ord-stats">
+                <div class="ord-stat"><span>Total</span><h4>1,284</h4></div>
+                <div class="ord-stat warn"><span>Pending</span><h4>42</h4></div>
+                <div class="ord-stat info"><span>Processing</span><h4>87</h4></div>
+                <div class="ord-stat ok"><span>Completed</span><h4>1,142</h4></div>
+                <div class="ord-stat danger"><span>Cancelled</span><h4>13</h4></div>
+            </div>
+            <div class="table-card">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Order ID</th><th>Customer</th><th>Date</th><th>Items</th><th>Total</th><th>Status</th><th>Actions</th></tr>
+                    </thead>
+                    <tbody id="ordTbody"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- CUSTOMERS -->
+        <section class="pg" id="pg-customers">
+            <div class="pg-head">
+                <div><h1>Customers</h1><p>View and manage customer accounts</p></div>
+            </div>
+            <div class="table-card">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Customer</th><th>Email</th><th>Orders</th><th>Spent</th><th>Joined</th><th>Actions</th></tr>
+                    </thead>
+                    <tbody id="custTbody"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- MESSAGES -->
+        <section class="pg" id="pg-messages">
+            <div class="pg-head">
+                <div><h1>Messages</h1><p>Customer inquiries and support requests</p></div>
+            </div>
+            <div class="msg-grid" id="msgGrid"></div>
+        </section>
+
+        <!-- NEWSLETTER -->
+        <section class="pg" id="pg-newsletter">
+            <div class="pg-head">
+                <div><h1>Newsletter Subscribers</h1><p>Manage your email list</p></div>
+                <div class="pg-actions">
+                    <button class="btn btn-outline"><i class="fas fa-download"></i><span>Export CSV</span></button>
+                    <button class="btn btn-primary"><i class="fas fa-paper-plane"></i><span>Send Campaign</span></button>
+                </div>
+            </div>
+            <div class="table-card">
+                <table class="data-table">
+                    <thead><tr><th>Email</th><th>Status</th><th>Subscribed</th><th>Actions</th></tr></thead>
+                    <tbody id="newsTbody"></tbody>
+                </table>
+            </div>
+        </section>
+
+
+        <!-- ANALYTICS -->
+        <section class="pg" id="pg-analytics">
+            <div class="pg-head">
+                <div><h1>Analytics</h1><p>Detailed insights into your store performance</p></div>
+            </div>
+            <div class="chart-row">
+                <div class="card chart-big">
+                    <div class="card-head"><div><h3>Sales Trend</h3><span class="card-sub">Monthly performance</span></div></div>
+                    <canvas id="salesChart" height="100"></canvas>
+                </div>
+                <div class="card">
+                    <div class="card-head"><div><h3>Customer Growth</h3><span class="card-sub">New signups</span></div></div>
+                    <canvas id="custChart" height="180"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- CATEGORIES -->
+        <section class="pg" id="pg-categories">
+            <div class="pg-head">
+                <div><h1>Categories</h1><p>Organize your product catalog</p></div>
+                <div class="pg-actions">
+                    <button class="btn btn-primary"><i class="fas fa-plus"></i><span>New Category</span></button>
+                </div>
+            </div>
+            <div class="cat-grid">
+                <div class="cat-card"><span class="cat-emoji">🕷️</span><h3>Tarantulas</h3><p>18 products</p><div class="cat-bar"><div style="width:78%"></div></div></div>
+                <div class="cat-card"><span class="cat-emoji">🦂</span><h3>Scorpions</h3><p>12 products</p><div class="cat-bar"><div style="width:62%"></div></div></div>
+                <div class="cat-card"><span class="cat-emoji">🦎</span><h3>Reptiles</h3><p>9 products</p><div class="cat-bar"><div style="width:48%"></div></div></div>
+                <div class="cat-card"><span class="cat-emoji">🐛</span><h3>Centipedes</h3><p>3 products</p><div class="cat-bar"><div style="width:25%"></div></div></div>
+            </div>
+        </section>
+
+        <!-- SETTINGS -->
+        <section class="pg" id="pg-settings">
+            <div class="pg-head">
+                <div><h1>Settings</h1><p>Configure your store preferences</p></div>
+            </div>
+            <div class="settings-grid">
+                <div class="card">
+                    <div class="card-head"><h3><i class="fas fa-store"></i> Store Information</h3></div>
+                    <div class="ff"><label>Store Name</label><input class="ff-input" value="EcoWarm"></div>
+                    <div class="ff"><label>Email</label><input class="ff-input" type="email" value="hello@ecowarm.co"></div>
+                    <div class="ff"><label>Currency</label><select class="ff-input"><option>USD ($)</option><option>EUR (€)</option><option>INR (₹)</option></select></div>
+                    <button class="btn btn-primary">Save Changes</button>
+                </div>
+                <div class="card">
+                    <div class="card-head"><h3><i class="fas fa-user-shield"></i> Admin Profile</h3></div>
+                    <div class="ff"><label>Username</label><input class="ff-input" value="admin"></div>
+                    <div class="ff"><label>Email</label><input class="ff-input" type="email" value="admin@ecowarm.co"></div>
+                    <div class="ff"><label>New Password</label><input class="ff-input" type="password" placeholder="Leave blank to keep current"></div>
+                    <button class="btn btn-primary">Update Profile</button>
+                </div>
+                <div class="card">
+                    <div class="card-head"><h3><i class="fas fa-paint-brush"></i> Appearance</h3></div>
+                    <div class="ff">
+                        <label>Theme</label>
+                        <div class="theme-cards">
+                            <div class="th-card" data-theme-set="light"><div class="th-prev light"></div><span>Light</span></div>
+                            <div class="th-card" data-theme-set="dark"><div class="th-prev dark"></div><span>Dark</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</main>
+
+<!-- Product Modal -->
+<div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+        <div class="modal-head">
+            <h2 id="modalTitle">Add Product</h2>
+            <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+        </div>
+        <form class="modal-form" id="prodForm">
+            <div class="ff-row">
+                <div class="ff"><label>Name</label><input class="ff-input" id="pName" required></div>
+                <div class="ff"><label>Latin Name</label><input class="ff-input" id="pLatin"></div>
+            </div>
+            <div class="ff-row">
+                <div class="ff"><label>Category</label>
+                    <select class="ff-input" id="pCat">
+                        <option value="tarantulas">Tarantulas</option>
+                        <option value="scorpions">Scorpions</option>
+                        <option value="reptiles">Reptiles</option>
+                        <option value="centipedes">Centipedes</option>
+                    </select>
+                </div>
+                <div class="ff"><label>Emoji</label><input class="ff-input" id="pEmoji" value="🕷️" maxlength="2"></div>
+            </div>
+            <div class="ff"><label>Description</label><textarea class="ff-input" id="pDesc" rows="3"></textarea></div>
+            <div class="ff-row">
+                <div class="ff"><label>Price ($)</label><input class="ff-input" id="pPrice" type="number" step="0.01" required></div>
+                <div class="ff"><label>Stock</label><input class="ff-input" id="pStock" type="number" required></div>
+            </div>
+            <div class="modal-actions">
+                <button type="button" class="btn btn-outline" id="modalCancel">Cancel</button>
+                <button type="submit" class="btn btn-primary">Save Product</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+
+<script src="assets/js/admin.js"></script>
+<script src="assets/js/dashboard.js"></script>
+</body>
+</html>
